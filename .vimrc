@@ -5,7 +5,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-airline/vim-airline'
-" Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'preservim/nerdtree'
 Plug 'leafgarland/typescript-vim'
@@ -71,7 +71,6 @@ noremap <leader>w :w<CR>
 noremap <leader>x :x<CR>
 " FZF 
 nnoremap <C-p> :GFiles<CR>
-hello my name is { albert tu  } 
 "General vim settings
 imap jk <Esc>
 
