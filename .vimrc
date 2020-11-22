@@ -2,6 +2,8 @@
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-airline/vim-airline'
@@ -12,9 +14,28 @@ Plug 'leafgarland/typescript-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'yaml', 'html'] }
 call plug#end()
+"set background=dark
+"colorscheme onedark
+
+" Important!!
+if has('termguicolors')
+   set termguicolors
+endif
+" For dark version.
 set background=dark
-colorscheme onedark
+let g:gruvbox_italic=0
+" Set contrast.
+" This configuration option should be placed before `colorscheme gruvbox-material`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:gruvbox_material_background = 'medium'
+let g:airline_theme = 'gruvbox_material'
+colorscheme gruvbox-material
+
+
 
 set number					                    "Line numbers
 set relativenumber				              "Relative line numbers
@@ -22,7 +43,7 @@ set incsearch					                  "Highlight search while typing"
 set wildmenu					                  "Display autocomplete menu for vim commands"
 set scrolloff=5					                "Leave 5 lines of buffer when scrolling"
 set sidescrolloff=10			              "Leave 10 characters of horizontal buffer when scrolling"
-set textwidth=100				                "Make it obvious where 100 characters is"
+set textwidth=90                        "Make it obvious where 90 chars are"
 set tabstop=2					                  "Indendation tabs for proper indentation"
 set wildmode=longest,list,full			    "Enable autocompletion"
 set shiftwidth=2				                "Enables next line auto indendation"
@@ -32,14 +53,17 @@ set splitbelow splitright
 set clipboard=unnamed                   "Use OS clipboard by default"
 set ttyfast                             "Optimize for fast terminal connections"
 set noswapfile                          "Do not generate a .swp file
+set showmatch                           "Show matching brackets"
 
 syntax on
+" Removes annoying background highlighting on comments
+:highlight Comment guifg=#928374 guibg=NONE guisp=NONE gui=italic cterm=NONE
 filetype on                             "Detects the type of file
 filetype indent on                      " Enable filetype-specific indenting
 filetype plugin on                      " Enable filetype-specific plugins
 
 "Highlights relative line numbers
-:highlight LineNr ctermfg=Grey
+" :highlight LineNr ctermfg=Grey
 
 " :map = map recursively
 " :noremap = map non-recursively
@@ -55,8 +79,7 @@ noremap <SPACE> <Nop>
 let mapleader=" "
 
 " Set FZF window to center
-"let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 }}
-
+" let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 }}
 
 "Keybindings
 "Shortcut split navigation with standard vim keys

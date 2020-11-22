@@ -12,6 +12,7 @@ brew tap homebrew/cask-fonts
 
 # package list
 PACKAGES=(
+  cask
   fzf
   wget
   zsh
@@ -22,6 +23,7 @@ PACKAGES=(
   python3
   vim
   github/gh/gh
+  nvm
 )
 
 echo "Installing packages..."

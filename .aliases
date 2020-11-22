@@ -1,3 +1,4 @@
+#!/bin/zsh
 
 #For a full list of active aliases, run `alias`.
 # Example aliases
@@ -7,6 +8,7 @@
 alias wem="curl wttr.in/milpitas"                         # Weather for Milpitas
 alias wela="curl wttr.in/losangeles"                      # Weather for LA
 alias ports="lsof -i -P -n | grep LISTEN"                 # Lists open ports
+
 # Easier cd navigation combined with listing out current dir files
 alias ..="cd .. && ls"
 alias ...="cd ../.. && ls"
@@ -14,3 +16,19 @@ alias ....="cd ../../.. && ls"
 
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+alias home="cd ~"
+alias vimrc="vi ~/dotfiles/.vimrc"
+alias zshrc="vi ~/dotfiles/.zshrc"
+alias aliasrc="vi ~/dotfiles/.aliases"
+
+# Enable colored `grep` output
+alias grep='grep --color=auto' 
+
+#URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# Copy working directory. Requires xclip dependency
+# alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
+
+
+
