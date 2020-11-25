@@ -78,15 +78,21 @@ filetype plugin on                      " Enable filetype-specific plugins
 noremap <SPACE> <Nop>
 let mapleader=" "
 
+
 " Set FZF window to center
 " let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 }}
 
-"Keybindings
-"Shortcut split navigation with standard vim keys
+" Navigation
+" Split navigation 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Tabs
+nnoremap tl :tabnext<CR>
+nnoremap th :tabprev<CR>
+
 " Map NERDTree to command-b similar VSCode Tree toggle
 nmap <C-b> :NERDTreeToggle<CR>
 " Remap save and exit
@@ -97,8 +103,8 @@ nnoremap <C-p> :GFiles<CR>
 "General vim settings
 imap jk <Esc>
 
-"CoC configuration
-"use <tab> for trigger completion and navigate to the next complete item
+" CoC configuration
+" use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
