@@ -1,4 +1,3 @@
-
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'joshdick/onedark.vim'
@@ -35,15 +34,13 @@ let g:gruvbox_material_background = 'medium'
 let g:airline_theme = 'gruvbox_material'
 colorscheme gruvbox-material
 
-
-
 set number					                    "Line numbers
 set relativenumber				              "Relative line numbers
 set incsearch					                  "Highlight search while typing"
 set wildmenu					                  "Display autocomplete menu for vim commands"
 set scrolloff=5					                "Leave 5 lines of buffer when scrolling"
 set sidescrolloff=10			              "Leave 10 characters of horizontal buffer when scrolling"
-set textwidth=90                        "Make it obvious where 90 chars are"
+set textwidth=100                        "Make it obvious where 90 chars are"
 set tabstop=2					                  "Indendation tabs for proper indentation"
 set wildmode=longest,list,full			    "Enable autocompletion"
 set shiftwidth=2				                "Enables next line auto indendation"
@@ -125,4 +122,3 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-

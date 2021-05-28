@@ -7,7 +7,7 @@ fi
 
 ZSH_DISABLE_COMPFIX="true"
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/atu/.oh-my-zsh"
+export ZSH="/Users/albtu/.oh-my-zsh"
 # source /usr/local/bin/aws_zsh_completer.sh
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -36,7 +36,7 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/bin/aws_zsh_completer.sh
 source ~/.profile
 source ~/.aliases
-source /Users/atu/.oh-my-zsh/themes/zsh-theme-gruvbox-material-dark
+source /Users/albtu/.oh-my-zsh/themes/zsh-theme-gruvbox-material-dark
 
 autoload -U promptinit; promptinit
 

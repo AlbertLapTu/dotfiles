@@ -7,6 +7,7 @@
 #
 alias wem="curl wttr.in/milpitas"                         # Weather for Milpitas
 alias wela="curl wttr.in/losangeles"                      # Weather for LA
+alias wea="curl wttr.in/anaheim"                          # Weather for Anaheim
 alias ports="lsof -i -P -n | grep LISTEN"                 # Lists open ports
 
 # Easier cd navigation combined with listing out current dir files
@@ -29,6 +30,10 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 
 # Copy working directory. Requires xclip dependency
 # alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
+
+# browser utils
+alias hurlp='pbpaste | jq ".log.entries" | tee >(jq --raw-output "[.[] | .request.url] | sort | unique | .[]")'
+alias hurld='pbpaste | jq ".log.entries" | jq --raw-output "[.[] | .request.url] | sort | unique | .[]" | harurls | tee >(xargs -n 1 curl -O $1)'
 
 
 
