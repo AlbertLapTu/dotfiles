@@ -51,6 +51,8 @@ set clipboard=unnamed                   "Use OS clipboard by default"
 set ttyfast                             "Optimize for fast terminal connections"
 set noswapfile                          "Do not generate a .swp file
 set showmatch                           "Show matching brackets"
+set cursorline                          "Highlight as you scroll"
+
 
 syntax on
 " Removes annoying background highlighting on comments

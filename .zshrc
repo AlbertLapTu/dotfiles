@@ -3,12 +3,14 @@
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+ fi
 
 ZSH_DISABLE_COMPFIX="true"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/albtu/.oh-my-zsh"
-# source /usr/local/bin/aws_zsh_completer.sh
+source /usr/local/bin/aws_zsh_completer.sh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=60"
+# typeset -g POWERLEVEL10K_INSTANT_PROMPT=quiet
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -31,12 +33,13 @@ plugins=(
   z
 )
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 source $ZSH/oh-my-zsh.sh
 source /usr/local/bin/aws_zsh_completer.sh
 source ~/.profile
 source ~/.aliases
-source /Users/albtu/.oh-my-zsh/themes/zsh-theme-gruvbox-material-dark
+# source /Users/albtu/.oh-my-zsh/themes/zsh-theme-gruvbox-material-dark
 
 autoload -U promptinit; promptinit
 
@@ -58,7 +61,7 @@ fi
 # More documentation at https://github.com/junegunn/fzf
 export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COCOMMAND="fd --type f"
-export NVM_DIR="/Users/atu/.nvm"
+export NVM_DIR="/Users/albtu/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
